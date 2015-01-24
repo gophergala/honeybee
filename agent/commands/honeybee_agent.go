@@ -4,7 +4,7 @@ import (
 	"github.com/gophergala/honeybee/agent"
 )
 
-func Main() {
+func main() {
 	// TODO check exec permissions
 	agent.Run()
 }

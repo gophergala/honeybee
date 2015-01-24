@@ -36,7 +36,7 @@ func Run() {
 
 	var c chan []byte = make(chan []byte)
 
-	go printer(c)
+	go listener(c)
 
 	startMonitor(c, 1)
 }
