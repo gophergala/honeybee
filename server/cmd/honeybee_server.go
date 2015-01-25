@@ -5,7 +5,12 @@ import (
 	"github.com/gophergala/honeybee/server"
 )
 
+//TODO save data in DB
+
 func main() {
-	fmt.Println("Starting honey server")
-	server.Run()
+	nodes := make(map[string]string)
+	edges := make(map[string][]string)
+	fmt.Println("Starting honeybee server")
+	go server.ListenPB(&nodes, &edges)
+	server.Run(&nodes, &edges)
 }

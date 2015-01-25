@@ -40,11 +40,11 @@ func listener(c <-chan []byte, dst *string) {
 
 		fmt.Println("unmarshalled", conAuxSlice)
 
-		con := new(protobee.Connection)
 		connections := new(protobee.Connections)
 		connections.Connection = []*protobee.Connection{}
 
 		for _, value := range conAuxSlice {
+			con := new(protobee.Connection)
 			con.Transport = proto.String(value.Transport)
 			con.LocalAddress = proto.String(value.LocalAddress)
 			con.LocalPort = proto.Uint32(value.LocalPort)
